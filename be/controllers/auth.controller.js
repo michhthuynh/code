@@ -6,4 +6,5 @@ module.exports.index = (req, res) => {
 
 module.exports.get = (req, res) => {
     res.send('hello')
+    res.send('hello2')
 }
