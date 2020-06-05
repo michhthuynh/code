@@ -1,18 +1,24 @@
 const express = require('express')
 const app = express()
 const PORT = 3000
-
+const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
 
-const authRoutes = require('./routes/auth.route.js')
-const productsRoutes = require('./routes/products.js') 
+const authRoute = require('./routes/auth.route.js')
+const productsRoute = require('./routes/products.route.js') 
 
+require('dotenv').config()
 
-app.use(bodyParser.urlencoded({ extended: true }))
-app.use(bodyParser.json())
+// config express 
+app.use(express.static('public'));
+app.use(bodyParser.urlencoded({ extended: false }));
 
-app.use('/auth', authRoutes)
-app.use('/products', productsRoutes)
+// config mongoose
+const optionMongoose = { useNewUrlParser: true, useUnifiedTopology: true };
+mongoose.connect(process.env.URI_MONGOOSE, optionMongoose, () => console.log('connected to DB!'));
+
+app.use('/auth', authRoute)
+app.use('/products', productsRoute)
 
 
 app.listen(3000, () => {
