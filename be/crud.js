@@ -30,9 +30,11 @@ async function updateDB(id, username, password, email){
 async function deleteDB(id){
     await userModel.deleteOne({_id: id})
 }
-// insertDB('test2', '123456', 'test@gmail')
+
 
 async function main(){
+    //await insertDB('test1', '123456', 'test1@gmail')
+    await getAll()
 }
 
 main()

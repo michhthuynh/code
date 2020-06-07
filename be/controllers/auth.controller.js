@@ -1,10 +1,9 @@
-module.exports.index = (req, res) => {
+module.exports.getToken = (req, res) => {
     const email =  req.body.email
     console.log(email)
     res.send('hello')
 }
 
-module.exports.get = (req, res) => {
+module.exports.login = (req, res) => {
     res.send('hello')
-    res.send('hello2')
 }
