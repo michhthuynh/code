@@ -33,7 +33,7 @@ async function deleteDB(id){
 
 
 async function main(){
-    //await insertDB('test1', '123456', 'test1@gmail')
+    await insertDB('test2', '123456', 'test2@gmail')
     await getAll()
 }
 

@@ -9,7 +9,8 @@ require('dotenv').config()
 
 // config express 
 app.use(express.static('public'));
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: true }));
 
 // config mongoose
 const optionMongoose = { useNewUrlParser: true, useUnifiedTopology: true };
